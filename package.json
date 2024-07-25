@@ -1,0 +1,17 @@
+{
+  "name": "poetap_raspred",
+  "version": "1.0.0",
+  "description": "Решение задачи по распределению ресурсов",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev": "electron . dev"
+  },
+  "author": "Serolapy",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.3.0"
+  },
+  "type": "commonjs"
+}
