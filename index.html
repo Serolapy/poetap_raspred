@@ -7,10 +7,199 @@
 <body>
 	<header><h1>Поэтапное распределение ресурсов</h1></header>
 	<article>
-		Hello world
+		<section id="enterData">
+			<h2>Входные данные</h2>
+			<form action="#">
+				<p><label for="vvod_S">Начальная сумма, S = </label><input type="number" id="vvod_S" min="1" required title="Положительное число"></p>
+				<p><label for="vvod_n">Количество этапов, n = </label><input type="number" id="vvod_n" min="1" required title="Натуральное число" required></p>
+				<p><label for="vvod_g">Формула доходов предприятия I, g(x) = </label><input type="text" id="vvod_g" class="formula" required></p>
+				<p><label for="vvod_h">Формула доходов предприятия II, h(x) = </label><input type="text" id="vvod_h" class="formula" required></p>
+				<p><label for="vvod_a">Коэффициент интенсивности трат средств предприятия I, a(x) = </label><input type="text" id="vvod_a" class="formula" required></p>
+				<p><label for="vvod_b">Коэффициент интенсивности трат средств предприятия II, b(x) = </label><input type="text" id="vvod_b" class="formula" required></p>
+				<input type="submit" value="Решить">
+			</form>
+		</section>
+		<section id="resolve">
+			<h2>Решение</h2>
+			<div id="resolve_text">
+				Загрузка...
+			</div>
+		</section>
 	</article>
 	<footer>
 		<address>2024 г., <a href="https://t.me/serolapy">Serolapy</a></address>
 	</footer>
+	<div id="calculator">
+		<table>
+			<caption>Калькулятор формул</caption>
+			<thead>
+				<tr>
+					<td colspan="5">
+						<input type="text" readonly id="display">
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>
+						<button type="button">
+							sin
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							cos
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							tg
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							ctg
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button">
+							pow
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							(
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							)
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							C
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							&#9003;
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button">
+							sqrt
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							7
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							8
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							9
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							/
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button">
+							log
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							4
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							5
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							6
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							*
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button">
+							e
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							1
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							2
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							3
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							-
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="button">
+							pi
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							x
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							0
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							,
+						</button>
+					</td>
+					<td>
+						<button type="button">
+							+
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
