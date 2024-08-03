@@ -1,0 +1,121 @@
+@import './tags.css';
+@import './class.css';
+
+:root {
+	--bg-color: #ffffff;
+	--bg-additional-color: hsl(221, 69%, 95%);
+	--text-color: #363636;
+	--additional-color: hsl(221, 69%, 55%);
+
+	--shadow: 0px 0px 20px -5px var(--additional-color);
+	--transition: 0.2s;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	margin: 0;
+	padding: 0;
+}
+body > *{
+	padding: 0 20px;
+}
+
+header {
+	background-color: var(--bg-additional-color);
+	padding: 10px;
+
+	box-shadow: var(--shadow);
+}
+
+article {
+	margin-bottom: 40px;
+}
+
+footer {
+	border-top: 3px solid var(--additional-color);
+	background-color: var(--bg-color);
+	padding: 10px 0;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 20px;
+	width: 100%;
+}
+
+#calculator {
+	border: 2px solid var(--additional-color);
+	border-radius: 10px;
+	width: 300px;
+	height: auto;
+	text-align: center;
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	padding: 10px;
+	transition: var(--transition);
+	
+	background-color: var(--bg-additional-color);	
+}
+	#calculator_section {
+		display: flex;
+		justify-content: center;
+	}
+	#calculator button {
+		background-color: var(--bg-color);
+		width: 50px;
+		height: 30px;
+		border: 1px solid var(--additional-color);
+		cursor: pointer;
+		transition: var(--transition);
+	}
+	#calculator button:hover {
+		background-color: var(--bg-additional-color);
+	}
+	#calculator button:active {
+		background-color: var(--additional-color);
+		color: var(--bg-color);
+	}
+	#calculator-display {
+		border: 1px solid var(--additional-color);
+		width: 95%;
+		margin: 10px 0;
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		text-align: right;
+		font-style: italic;
+	}
+	#calculator-minus {
+		position: relative;
+		display: block;
+		width: 15px;
+		height: 3px;
+		background-color: var(--additional-color);
+		top: 0px;
+		left: 280px;
+		cursor: pointer;
+		transition: var(--transition);
+	}
+		#calculator-minus:hover {
+			background-color: var(--text-color);
+		}
+	#calculator h3 {
+		margin: 0 0 10px 0;
+	}
+	#calculator-table tbody {
+		user-select: none;
+	}
+
+#calculator.hide #calculator-table {
+	display: none;
+}
+
+#calculator.hide h3 {
+	margin: 0;
+}
+
+#resolve.hide{
+	height: 0;
+	overflow-y: hidden;
+}

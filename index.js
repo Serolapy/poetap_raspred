@@ -22,6 +22,8 @@ app.on('ready', function (){
 		simpleFullscreen: true,
 	});
 	win.loadFile('index.html');
+	
+	if (DEBUG) win.webContents.openDevTools();
 });
 
 app.on('window-all-closed', function(){

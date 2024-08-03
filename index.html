@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Поэтапное распределение ресурсов</title>
+	<link rel="stylesheet" href="./static/index.css">
 </head>
 <body>
 	<header><h1>Поэтапное распределение ресурсов</h1></header>
@@ -10,196 +11,207 @@
 		<section id="enterData">
 			<h2>Входные данные</h2>
 			<form action="#">
-				<p><label for="vvod_S">Начальная сумма, S = </label><input type="number" id="vvod_S" min="1" required title="Положительное число"></p>
-				<p><label for="vvod_n">Количество этапов, n = </label><input type="number" id="vvod_n" min="1" required title="Натуральное число" required></p>
-				<p><label for="vvod_g">Формула доходов предприятия I, g(x) = </label><input type="text" id="vvod_g" class="formula" required></p>
-				<p><label for="vvod_h">Формула доходов предприятия II, h(x) = </label><input type="text" id="vvod_h" class="formula" required></p>
-				<p><label for="vvod_a">Коэффициент интенсивности трат средств предприятия I, a(x) = </label><input type="text" id="vvod_a" class="formula" required></p>
-				<p><label for="vvod_b">Коэффициент интенсивности трат средств предприятия II, b(x) = </label><input type="text" id="vvod_b" class="formula" required></p>
+				<p><label for="vvod_S">Начальная сумма, <span class="input-var">S = </span></label><input type="number" id="vvod_S" min="1" required title="Положительное число" placeholder="10000"></p>
+				<p><label for="vvod_n">Количество этапов, <span class="input-var">n = </span></label><input type="number" id="vvod_n" min="1" required title="Натуральное число" required placeholder="3"></p>
+				<p><label for="vvod_g">Формула доходов предприятия I, <span class="input-var">g(x) = </span></label><input type="text" id="vvod_g" class="formula" required placeholder="0.6 * x"></p>
+				<p><label for="vvod_h">Формула доходов предприятия II, <span class="input-var">h(x) = </span></label><input type="text" id="vvod_h" class="formula" required placeholder="0.8 * x"></p>
+				<p><label for="vvod_a">Коэффициент интенсивности трат средств предприятия I, <span class="input-var">a(x) = </span></label><input type="text" id="vvod_a" class="formula" required placeholder="0.6 * x"></p>
+				<p><label for="vvod_b">Коэффициент интенсивности трат средств предприятия II, <span class="input-var">b(x) = </span></label><input type="text" id="vvod_b" class="formula" required placeholder="0.5 * x"></p>
 				<input type="submit" value="Решить">
 			</form>
 		</section>
-		<section id="resolve">
+		<section id="calculator_section">
+			<div id="calculator" class="hide">
+				<span id="calculator-minus"></span>
+				<h3 id="calculator_header">Калькулятор формул</h3>
+				<table id="calculator-table">
+					<thead>
+						<tr>
+							<td colspan="5">
+								<input type="text" id="calculator-display" value="">
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" data-btn="sin(" class="calculator-button">
+									sin
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="cos(" class="calculator-button">
+									cos
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="tg(" class="calculator-button">
+									tg
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="ctg(" class="calculator-button">
+									ctg
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" data-btn="^(" class="calculator-button">
+									pow
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="(" class="calculator-button">
+									(
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn=")" class="calculator-button">
+									)
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="clear" class="calculator-button">
+									C
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="backspace" class="calculator-button">
+									&#9003;
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" data-btn="sqrt(" class="calculator-button">
+									sqrt
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="7" class="calculator-button">
+									7
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="8" class="calculator-button">
+									8
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="9" class="calculator-button">
+									9
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="/" class="calculator-button">
+									/
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" data-btn="log(" class="calculator-button">
+									log
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="4" class="calculator-button">
+									4
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="5" class="calculator-button">
+									5
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="6" class="calculator-button">
+									6
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="*" class="calculator-button">
+									*
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" data-btn="e" class="calculator-button">
+									e
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="1" class="calculator-button">
+									1
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="2" class="calculator-button">
+									2
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="3" class="calculator-button">
+									3
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="-" class="calculator-button">
+									-
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" data-btn="pi" class="calculator-button">
+									pi
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="x" class="calculator-button">
+									x
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="0" class="calculator-button">
+									0
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="." class="calculator-button">
+									,
+								</button>
+							</td>
+							<td>
+								<button type="button" data-btn="+" class="calculator-button">
+									+
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<script src="./static/calculatorHTML.js"></script>
+		</section>
+		<section id="resolve" class="hide">
 			<h2>Решение</h2>
 			<div id="resolve_text">
-				Загрузка...
+				<div class="parent__icon_loading-gif">
+					<svg width="100px" height="100px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" class="icon_loading-gif">
+						<g fill-rule="evenodd" clip-rule="evenodd">
+							<path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z" fill="var(--bg-additional-color)"/>
+							<path d="M7.25.75A.75.75 0 018 0a8 8 0 018 8 .75.75 0 01-1.5 0A6.5 6.5 0 008 1.5a.75.75 0 01-.75-.75z" fill="var(--additional-color)"/>
+						</g>	
+					</svg>
+				</div>
 			</div>
 		</section>
 	</article>
 	<footer>
 		<address>2024 г., <a href="https://t.me/serolapy">Serolapy</a></address>
 	</footer>
-	<div id="calculator">
-		<table>
-			<caption>Калькулятор формул</caption>
-			<thead>
-				<tr>
-					<td colspan="5">
-						<input type="text" readonly id="display">
-					</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td>
-						<button type="button">
-							sin
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							cos
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							tg
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							ctg
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button">
-							pow
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							(
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							)
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							C
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							&#9003;
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button">
-							sqrt
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							7
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							8
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							9
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							/
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button">
-							log
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							4
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							5
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							6
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							*
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button">
-							e
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							1
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							2
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							3
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							-
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button">
-							pi
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							x
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							0
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							,
-						</button>
-					</td>
-					<td>
-						<button type="button">
-							+
-						</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
 </body>
 </html>
