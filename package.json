@@ -13,5 +13,8 @@
   "devDependencies": {
     "electron": "^31.3.0"
   },
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "mathjs": "^13.0.3"
+  }
 }

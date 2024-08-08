@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const calculator = require('./calculator.js');
 
 for (let i = 0; i < process.argv.length; i++){
 	if (process.argv[i] == 'dev'){
@@ -29,3 +30,5 @@ app.on('ready', function (){
 app.on('window-all-closed', function(){
 	app.quit();
 });
+
+calculator(10000, 1, '0.6*x*x', '0.5*x', '0.7*x', '0.8*x');
